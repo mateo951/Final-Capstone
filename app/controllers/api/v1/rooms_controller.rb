@@ -1,5 +1,6 @@
-class RoomsController < ApplicationController
+class Api::V1::RoomsController < ApplicationController
   before_action :set_room, only: %i[show update destroy]
+  ALLOWED_DATA = %(name, image_url, price, description, surface).freeze
 
   # GET /rooms
   def index
@@ -15,7 +16,8 @@ class RoomsController < ApplicationController
 
   # POST /rooms
   def create
-    @room = Room.new(room_params)
+    data = json_payload.select { |item| ALLOWED_DATA.include?(item) }
+    @room = Room.new(data)
 
     if @room.save
       render json: @room, status: :created, location: @room
@@ -35,6 +37,7 @@ class RoomsController < ApplicationController
 
   # DELETE /rooms/1
   def destroy
+    @room = Room.find(params[:id])
     @room.destroy
   end
 
