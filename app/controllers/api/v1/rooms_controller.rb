@@ -1,7 +1,7 @@
 class Api::V1::RoomsController < ApplicationController
   before_action :set_room, only: %i[show update destroy]
   ALLOWED_DATA = %(name, image_url, price, description, surface).freeze
-  
+
   # GET /rooms
   def index
     @rooms = Room.all
