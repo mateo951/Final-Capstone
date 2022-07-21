@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # resources :users
+  resources :users
   # resources :reservations
   # resources :rooms
   namespace :api do
