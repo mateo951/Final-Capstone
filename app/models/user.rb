@@ -1,3 +1,8 @@
 class User < ApplicationRecord
   has_many :reservations
+
+  has_secure_password
+
+  validates_presence_of :name, :email, :admin
+  validates_uniqueness_of :email
 end
