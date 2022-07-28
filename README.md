@@ -15,6 +15,9 @@ Built With
 - `Ruby Gems` 
 - `PostgreSQL`
 
+### Live demo
+[Link to the API](https://hemerson-hotel-api.herokuapp.com)
+
 ### Setup 🔂 
 - Clone the repository using this [GitHub](https://github.com/mateo951/Final-Capstone-backend.git) link.
 - `cd` into the directory. 
