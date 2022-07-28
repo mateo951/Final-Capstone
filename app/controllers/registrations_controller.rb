@@ -3,6 +3,7 @@ class RegistrationsController < ApplicationController
     @user = User.create!(
       name: params['user']['name'],
       email: params['user']['email'],
+      admin: params['user']['admin'],
       password: params['user']['password'],
       password_confirmation: params['user']['password_confirmation']
     )
